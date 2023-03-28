@@ -1,0 +1,22 @@
+name: ansible-deploy
+on: 
+ push: 
+  branches:
+  - main
+ workflow_dispatch:
+jobs:
+ ansible_configure:
+   runs-on: ubuntu-latest
+   steps:
+    - name: checkout repo
+      uses: actions/checkout@v2
+    - name: Lint Ansible Playbook
+      uses: ansible/ansible-lint-action@master
+      with:
+        targets: ""
+ deployAnsible:
+    needs: ansible_configure
+    runs-on: ubuntu-latest
+    steps:
+    - name: run ansible playbook
+      run: ansible-playbook display_message.yaml
