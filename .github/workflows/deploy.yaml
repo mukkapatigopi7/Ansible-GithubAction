@@ -17,6 +17,9 @@ jobs:
  deployAnsible:
     needs: ansible_configure
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: playbooks
     steps:
     - name: print dir
       run: pwd
