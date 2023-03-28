@@ -11,7 +11,7 @@ jobs:
     - name: checkout repo
       uses: actions/checkout@v2
     - name: Lint Ansible Playbook
-      uses: ansible/ansible-lint-action@main:
+      uses: ansible/ansible-lint-action@main
       with:
         targets: ""
  deployAnsible:
@@ -21,5 +21,7 @@ jobs:
       run:
         working-directory: playbooks
     steps:
+    - name: print dir
+      run: pwd
     - name: run ansible playbook
       run: ansible-playbook display_message.yaml
