@@ -18,5 +18,7 @@ jobs:
     needs: ansible_configure
     runs-on: ubuntu-latest
     steps:
+    - name: print dir
+      run: pwd
     - name: run ansible playbook
       run: ansible-playbook display_message.yaml
