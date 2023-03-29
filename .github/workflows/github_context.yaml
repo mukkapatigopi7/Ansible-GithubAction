@@ -1,0 +1,11 @@
+name: get github context
+on:
+ issues:
+  type: [opened]
+jobs:
+ github-context:
+  runs-on: ubuntu-latest
+  steps:
+   - name: get github event
+     run: echo '{{ toJSON(github.event) }}'| jq
+ 
