@@ -2,6 +2,7 @@ name: get github context
 on:
  issues:
   type: [opened]
+ workflow_dispatch:
 jobs:
  github-context:
   runs-on: ubuntu-latest
