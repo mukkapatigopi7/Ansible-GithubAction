@@ -1,8 +1,8 @@
 ---
-- name: message playbook
-  hosts: all
-  tasks:
-  - name: print message
-    ansible.builtin.debug:
-      msg: "Welcome to Ansible Playbook"
-
+- hosts: all
+  become: yes
+  vars:
+   pkgname: httpd
+  tasks: 
+   - name: Install httpd
+     action: yum name='{{ pkgname}}' state=installed
