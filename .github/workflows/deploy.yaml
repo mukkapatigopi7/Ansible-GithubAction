@@ -15,6 +15,10 @@ jobs:
  deployAnsible:
     needs: ansible_configure
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+        - playbook: display_message.yaml
     defaults:
       run:
         working-directory: playbooks
@@ -23,3 +27,4 @@ jobs:
       run: pwd
     - name: run ansible playbook
       run: ansible-playbook display_message.yaml
+      
