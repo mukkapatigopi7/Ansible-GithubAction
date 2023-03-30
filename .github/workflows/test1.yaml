@@ -1,0 +1,14 @@
+name: Ansible Playbook
+on:
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Install Ansible
+      run: sudo apt-get install ansible
+    - name: Run Ansible playbook
+      #run: ansible-playbook /path/to/your/playbook.yml
+      run: ansible --version
