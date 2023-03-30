@@ -1,8 +1,0 @@
----
-- hosts: all
-  become: yes
-  vars:
-   pkgname: httpd
-  tasks: 
-   - name: Install httpd
-     action: yum name='{{ pkgname}}' state=installed
