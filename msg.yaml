@@ -1,6 +1,6 @@
 ---
 - name: message playbook
-  hosts: localhost
+  hosts: all
   tasks: 
   - name: print message
     debug:
