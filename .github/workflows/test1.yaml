@@ -13,3 +13,5 @@ jobs:
       run: |
        ansible --version
        ansible-playbook msg.yaml
+      env:
+        ANSIBLE_HOST_KEY_CHECKING: False
