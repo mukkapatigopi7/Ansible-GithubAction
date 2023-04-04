@@ -22,9 +22,11 @@ jobs:
        mkdir -p /home/runner/.ssh/
        touch /home/runner/.ssh/id_rsa
        echo -e "${{secrets.SSH_KEY}}" > /home/runner/.ssh/id_rsa
-       echo "scret configure"
-       chmod 400 /home/runner/.ssh/id_rsa
+       cat /home/runner/.ssh/id_rsa
+       chmod 600 /home/runner/.ssh/id_rsa
+       echo "changed permission"
        ssh-keyscan -t rsa,dsa,ecdsa,ed25519 ${{secrets.SSH_HOST}} >> /home/runner/.ssh/known_hosts
+       echo "host configure"
     - name: Run ansible script
       shell: bash 
       run: |
