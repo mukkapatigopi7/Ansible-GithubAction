@@ -18,9 +18,11 @@ jobs:
     - name: Run Ansible Playbook on provided host
       run: |
        eval `ssh-agent -s`
+       pwd
        mkdir -p /home/runner/.ssh/
        touch /home/runner/.ssh/id_rsa
        echo -e "${{secrets.SSH_KEY}}" > /home/runner/.ssh/id_rsa
+       echo "scret configure"
        chmod 400 /home/runner/.ssh/id_rsa
        ssh-keyscan -t rsa,dsa,ecdsa,ed25519 ${{secrets.SSH_HOST}} >> /home/runner/.ssh/known_hosts
     - name: Run ansible script
