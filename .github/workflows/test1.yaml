@@ -33,7 +33,7 @@ jobs:
        service ssh status
        #cd infrastructure/ansible
        #cat setup-prod.yml
-       sudo ansible-playbook -vvv --private-key /home/runner/.ssh/id_rsa -i host msg.yaml
+       sudo ansible-playbook -vvv --private-key /home/runner/.ssh/id_rsa -i host1 msg.yaml
        #-u ${{secrets.ANSIBLE_DEPLOY_USER}}
 
  
