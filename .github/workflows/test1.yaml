@@ -20,7 +20,7 @@ jobs:
        eval `ssh-agent -s`
        pwd
        mkdir -p /home/runner/.ssh/
-       touch /home/runner/.ssh/id_rsa
+       touch /home/runner/.ssh/id_rsa.pem
        echo -e "${{secrets.SSH_KEY}}" > /home/runner/.ssh/id_rsa.pem
        cat /home/runner/.ssh/id_rsa.pem
        chmod 600 /home/runner/.ssh/id_rsa.pem
